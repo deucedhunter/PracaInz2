@@ -1,0 +1,40 @@
+﻿@model PracaInz.ViewModels.SubjectTeacherVM
+
+@{
+    ViewBag.Title = "formTeacher";
+}
+
+<h2>formTeacher</h2>
+
+@using (@Html.BeginForm("Save", "Teacher"))
+{
+    @Html.ValidationSummary(true, "Proszę poprawidź zaznaczone pola!")
+    <div class="form-group">
+        @Html.LabelFor(m => m.FirstName)
+        @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.FirstName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.LastName)
+        @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.LastName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Adress)
+        @Html.TextBoxFor(m => m.Adress, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Adress)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Phone)
+        @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Phone)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.SubjectId)
+        @Html.DropDownListFor(m => m.SubjectId, new SelectList(Model.Subject, "Id", "Name"), "Wybierz Przedmiot", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.SubjectId)
+    </div>
+    @Html.HiddenFor(m => m.TeacherId)
+    @Html.AntiForgeryToken()
+    <button class="btn btn-primary">Wyślij</button>
+}

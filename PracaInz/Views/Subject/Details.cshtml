@@ -1,0 +1,20 @@
+﻿@model PracaInz.Models.Subject
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    @Html.LabelFor(m => m.Id)
+    @Html.DisplayFor(m => m.Id)
+</div>
+<div>
+    @Html.LabelFor(m => m.Name)
+    @Html.DisplayFor(m => m.Name)
+</div>
+<div>
+    @Html.LabelFor(m => m.Description)
+    @Html.DisplayFor(m => m.Description)
+</div>

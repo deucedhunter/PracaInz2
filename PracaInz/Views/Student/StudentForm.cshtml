@@ -1,0 +1,54 @@
+﻿@model PracaInz.ViewModels.StudentClassVM
+
+@{
+    ViewBag.Title = "StudentForm";
+}
+
+<h2>StudentForm</h2>
+
+
+@using (Html.BeginForm("Save", "Student"))
+{
+    @Html.ValidationSummary(true, "Proszę poprawić błędy!");
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Student.FirstName)
+        @Html.TextBoxFor(m => m.Student.FirstName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Student.FirstName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Student.LastName)
+        @Html.TextBoxFor(m => m.Student.LastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Student.LastName)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Student.ClassId)
+        @Html.DropDownListFor(m => m.Student.ClassId, new SelectList(Model.Class, "Id", "Name"), "Wybierz Klasę",new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Student.ClassId)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Student.City)
+        @Html.TextBoxFor(m => m.Student.City, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Student.City)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Student.Adress)
+        @Html.TextBoxFor(m => m.Student.Adress, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Student.Adress)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Student.BirthDate)
+        @Html.TextBoxFor(m => m.Student.BirthDate, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Student.BirthDate)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Student.Phone)
+        @Html.TextBoxFor(m => m.Student.Phone, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Student.Phone)
+    </div>
+    @Html.HiddenFor(m => m.Student.Id)
+    @Html.AntiForgeryToken()
+    <button class="btn btn-primary">Zarejestruj!</button>
+}

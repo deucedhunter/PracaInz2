@@ -1,0 +1,42 @@
+﻿@model IEnumerable<PracaInz.Models.Student>
+    @{
+        ViewBag.Title = "Index";
+    }
+
+    <h2>Index</h2>
+    <p>
+        @Html.ActionLink("Nowy uczeń", "New", "Student", null, new { @class = "btn btn-primary" })
+    </p>
+
+    @if (!Model.Any())
+    {
+        <p>Nie mamy żadnych uczniów w bazie.</p>
+    }
+    else
+    {
+        <table id="studentsTable" class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Imię i Nazwisko</th>
+                    <th>Klasa</th>
+                    <th>Usuń</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var student in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.ActionLink(@student.FirstName + " " + @student.LastName, "Edit", "Student", new { id = @student.Id }, null)
+                            @Html.ActionLink("(Details)", "Details", "Student", new { id = student.Id }, null)
+                        </td>
+                        <td>@student.Class.Name</td>
+                        <td>@Html.ActionLink("Usuń", "Delete", "Student", new { id = @student.Id }, new { @class = "btn-link" })</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+
+

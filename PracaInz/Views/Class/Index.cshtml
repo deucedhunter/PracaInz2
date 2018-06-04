@@ -1,0 +1,31 @@
+﻿@model PracaInz.ViewModels.BothMultiStudentClassVM
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<p>
+    @Html.ActionLink("Nowa Klasa", "New", "Movies", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Klasa</th>
+            <th>Ile uczniów</th>
+            <th>Usuń</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model.Class)
+    {
+        <tbody>
+            <tr>
+                <td>@Html.ActionLink(@item.Name, "List", "Class", new { id = item.Id }, new { @class = "btn-link" })</td>
+                <td>@Model.Student.Where(s => s.ClassId == item.Id).Count().ToString()</td>
+                <td>@Html.ActionLink("Usuń", "Delete", "Class", new { id = item.Id }, new { @class = "btn-link" })</td>
+            </tr>
+        </tbody>
+    }
+</table>
+
+

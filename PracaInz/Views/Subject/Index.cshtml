@@ -1,0 +1,39 @@
+﻿@model IEnumerable<PracaInz.Models.Subject>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nowy przedmiot", "New", "Subject", null, new { @class = "btn btn-primary" })
+</p>
+
+@if (!Model.Any())
+{
+    <p>Nie mamy żadnych przedmiotów w bazie.</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Nazwa</th>
+                <th>Usuń</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var subject in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink(@subject.Name, "Edit", "Subject", new { id = subject.Id }, null)
+                        @Html.ActionLink("(Details)", "Details", "Subject", new { id = subject.Id }, null)
+                    </td>
+                    <td>@Html.ActionLink("Usuń", "Delete", "Subject", new { id = @subject.Id }, new { @class = "btn-link" })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+

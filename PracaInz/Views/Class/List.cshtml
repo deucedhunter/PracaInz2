@@ -1,0 +1,26 @@
+﻿@model IEnumerable<PracaInz.Models.Student>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>@ViewBag.ClassName</h2>
+
+@foreach(var item in Model)
+{
+    
+}
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Uczeń</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <td>@item.FirstName @item.LastName</td>
+            </tr>
+        </tbody>
+    }
+</table>

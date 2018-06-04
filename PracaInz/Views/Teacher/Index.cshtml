@@ -1,0 +1,38 @@
+﻿@model IEnumerable<PracaInz.Models.Teacher>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<p>
+    @Html.ActionLink("Nowy nauczyciel", "New", "Subject", null, new { @class = "btn btn-primary" })
+</p>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th class="col">Imie i Nazwisko</th>
+            <th class="col">Adres</th>
+            <th class="col">Telefon</th>
+            <th class="col">Usuń</th>
+        </tr>
+        <tr>
+    </thead>
+    <tbody>
+        @foreach (var teacher in Model)
+        {
+        <tr>
+            <td>
+                @Html.ActionLink(@teacher.FirstName + " " + @teacher.LastName, "Edit", "Teacher", new { id = teacher.TeacherId }, null)
+                @Html.ActionLink("(Details)", "Details", "Teacher", new { id = teacher.TeacherId }, null)
+            </td>
+            <td>@teacher.Adress</td>
+            <td>@teacher.Phone</td>
+            <td>@Html.ActionLink("Usuń", "Delete", "Teacher", new { id = @teacher.TeacherId }, new { @class = "btn-link" })</td>
+        </tr>
+        }
+    </tbody>
+</table>

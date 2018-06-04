@@ -1,0 +1,26 @@
+﻿@model PracaInz.Models.Subject
+
+@{
+    ViewBag.Title = "subjectForm";
+}
+
+<h2>subjectForm</h2>
+
+@using (Html.BeginForm("Save", "Subject"))
+{
+    @Html.ValidationSummary(true, "Proszę poprawić błędy!");
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Description)
+        @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Description)
+    </div>
+    @Html.HiddenFor(m => m.Id)
+    @Html.AntiForgeryToken()
+    <button class="btn btn-primary">Wyślij!</button>
+}

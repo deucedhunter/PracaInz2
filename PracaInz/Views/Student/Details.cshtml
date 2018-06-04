@@ -1,0 +1,42 @@
+﻿@model PracaInz.Models.Student
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+
+@Html.LabelForModel(Model) <br />
+
+
+
+<div>
+    @Html.LabelFor(m => m.Id)
+    @Html.DisplayFor(m => m.Id)
+</div>
+<div>
+    @Html.LabelFor(m => m.FirstName)
+    @Html.DisplayFor(m => m.FirstName)
+</div>
+<div>
+    @Html.LabelFor(m => m.LastName)
+    @Html.DisplayFor(m => m.LastName)
+</div>
+<div>
+    @Html.LabelFor(m => m.BirthDate)
+    @Convert.ToDateTime(Model.BirthDate).ToString("dd/MM/yyyy")
+</div>
+<div>
+    @Html.LabelFor(m => m.City)
+    @Html.DisplayFor(m => m.City)
+</div>
+<div>
+    @Html.LabelFor(m => m.Adress)
+    @Html.DisplayFor(m => m.Adress)
+</div>
+<div>
+    @Html.LabelFor(m => m.Phone)
+    @Html.DisplayFor(m => m.Phone)
+</div>
+

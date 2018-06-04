@@ -1,0 +1,28 @@
+﻿@model PracaInz.ViewModels.SingleSubjectTeacher
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<p>
+    @Html.LabelFor(m => m.FirstName)
+    @Html.DisplayFor(m => m.FirstName)
+</p>
+<p>
+    @Html.LabelFor(m => m.LastName)
+    @Html.DisplayFor(m => m.LastName)
+</p>
+<p>
+    @Html.LabelFor(m => m.Adress)
+    @Html.DisplayFor(m => m.Adress)
+</p>
+<p>
+    @Html.LabelFor(m => m.Phone)
+    @Html.DisplayFor(m => m.Phone)
+</p>
+<p>
+    @Html.LabelFor(m => m.Subject.Name)
+    @Html.DisplayFor(m => m.Subject.Name)
+</p>
