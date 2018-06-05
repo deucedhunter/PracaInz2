@@ -253,6 +253,14 @@
     <Compile Include="Migrations\201806041522564_AddClassTeacherConnect.Designer.cs">
       <DependentUpon>201806041522564_AddClassTeacherConnect.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806041619148_FixModelClassTeacher.cs" />
+    <Compile Include="Migrations\201806041619148_FixModelClassTeacher.Designer.cs">
+      <DependentUpon>201806041619148_FixModelClassTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806041626014_FixModelClassTeacher1.cs" />
+    <Compile Include="Migrations\201806041626014_FixModelClassTeacher1.Designer.cs">
+      <DependentUpon>201806041626014_FixModelClassTeacher1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Class.cs" />
@@ -269,6 +277,7 @@
     <Compile Include="ViewModels\SingleSubjectTeacher.cs" />
     <Compile Include="ViewModels\StudentClassVM.cs" />
     <Compile Include="ViewModels\StudentGradesVM.cs" />
+    <Compile Include="ViewModels\StudentGradeVM.cs" />
     <Compile Include="ViewModels\StudentSubjectVM.cs" />
     <Compile Include="ViewModels\SubjectTeacherVM.cs" />
   </ItemGroup>
@@ -343,6 +352,8 @@
     <Content Include="Views\Teacher\formTeacher.cshtml" />
     <Content Include="Views\Class\Index.cshtml" />
     <Content Include="Views\Class\List.cshtml" />
+    <Content Include="Views\Student\GradeList.cshtml" />
+    <Content Include="Views\Student\AddGrade.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -396,6 +407,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806041522564_AddClassTeacherConnect.resx">
       <DependentUpon>201806041522564_AddClassTeacherConnect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806041619148_FixModelClassTeacher.resx">
+      <DependentUpon>201806041619148_FixModelClassTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806041626014_FixModelClassTeacher1.resx">
+      <DependentUpon>201806041626014_FixModelClassTeacher1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

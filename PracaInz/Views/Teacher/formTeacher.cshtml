@@ -1,11 +1,8 @@
 ﻿@model PracaInz.ViewModels.SubjectTeacherVM
-
 @{
     ViewBag.Title = "formTeacher";
 }
-
 <h2>formTeacher</h2>
-
 @using (@Html.BeginForm("Save", "Teacher"))
 {
     @Html.ValidationSummary(true, "Proszę poprawidź zaznaczone pola!")
@@ -30,10 +27,17 @@
         @Html.ValidationMessageFor(m => m.Phone)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.SubjectId)
-        @Html.DropDownListFor(m => m.SubjectId, new SelectList(Model.Subject, "Id", "Name"), "Wybierz Przedmiot", new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.SubjectId)
+    @Html.LabelFor(m => m.SubjectId)
+    @Html.DropDownListFor(m => m.SubjectId, new SelectList(Model.Subject, "Id", "Name"), "Wybierz Przedmiot", new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.SubjectId)
     </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ClassId)
+        @Html.DropDownListFor(m => m.ClassId, new SelectList(Model.Class, "Id", "Name"), " ", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.ClassId)
+    </div>
+
+
     @Html.HiddenFor(m => m.TeacherId)
     @Html.AntiForgeryToken()
     <button class="btn btn-primary">Wyślij</button>

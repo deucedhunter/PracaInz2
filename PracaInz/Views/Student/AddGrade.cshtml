@@ -1,0 +1,36 @@
+﻿@model PracaInz.ViewModels.StudentGradeVM
+
+@{
+    ViewBag.Title = "AddGrade";
+}
+
+<h2>@Model.Student.FirstName @Model.Student.LastName - AddGrade</h2>
+
+@using (Html.BeginForm("SaveGrade", "Student"))
+{
+    @Html.ValidationSummary(true, "Proszę o poprawienie zaznaczonych elementów.");
+    <div class="form-group">
+        @Html.LabelFor(m => m.SubjectId)
+        @Html.DropDownListFor(m => m.SubjectId, new SelectList(Model.Subject, "Id", "Name"), "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.SubjectId)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Value)
+        @Html.TextBoxFor(m => m.Value, new { Value = "", @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Value)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Description)
+        @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Description)
+    </div>
+
+
+
+    @Html.HiddenFor(m => m.Id)
+    @Html.HiddenFor(m => m.StudentId)
+    @Html.AntiForgeryToken()
+    <input type="submit" class="btn btn-primary" value="Dodaj ocenę!" />
+}

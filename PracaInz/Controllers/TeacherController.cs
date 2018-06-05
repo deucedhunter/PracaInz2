@@ -31,7 +31,7 @@ namespace PracaInz.Controllers
             {
                 var viewModel = new SubjectTeacherVM(teacher)
                 {
-                    Subject = _context.Subjects.ToList()
+                    Subject = _context.Subjects.ToList(),
                 };
                 return View("formTeacher", viewModel);
             }
@@ -57,6 +57,18 @@ namespace PracaInz.Controllers
             var teachers = _context.Teachers.ToList();
             return View(teachers);
         }
+
+        public ActionResult New()
+        {
+            var viewModel = new SubjectTeacherVM
+            {
+                Subject = _context.Subjects.ToList(),
+                Class = _context.Classes.ToList()
+
+            };
+            return View("formTeacher", viewModel);
+        }
+
         public ActionResult Details(int id)
         {
             var teachers = _context.Teachers.Include(s => s.Subject).SingleOrDefault(t => t.TeacherId == id);

@@ -268,3 +268,5 @@ C:\Projects\PracaInz2\PracaInz\obj\Debug\PracaInz.csproj.CoreCompileInputs.cache
 C:\Projects\PracaInz2\PracaInz\obj\Debug\PracaInz.csproj.CopyComplete
 C:\Projects\PracaInz2\PracaInz\obj\Debug\PracaInz.dll
 C:\Projects\PracaInz2\PracaInz\obj\Debug\PracaInz.pdb
+C:\Projects\PracaInz2\PracaInz\obj\Debug\PracaInz.Migrations.FixModelClassTeacher.resources
+C:\Projects\PracaInz2\PracaInz\obj\Debug\PracaInz.Migrations.FixModelClassTeacher1.resources

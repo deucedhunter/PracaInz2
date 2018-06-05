@@ -10,6 +10,8 @@ namespace PracaInz.ViewModels
     public class SubjectTeacherVM
     {
         public IEnumerable<Subject> Subject { get; set; }
+        public IEnumerable<Class> Class { get; set; }
+
 
         public int TeacherId { get; set; }
         public string FirstName { get; set; }
@@ -17,6 +19,7 @@ namespace PracaInz.ViewModels
         public string Adress { get; set; }
         public string Phone { get; set; }
         public int SubjectId { get; set; }
+        public int ClassId { get; set; }
 
 
         public SubjectTeacherVM()
@@ -32,6 +35,7 @@ namespace PracaInz.ViewModels
             Adress = teacher.Adress;
             Phone = teacher.Phone;
             SubjectId = teacher.SubjectId;
+            ClassId = teacher.ClassId;
         }
     }
 }

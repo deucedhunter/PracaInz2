@@ -1,0 +1,41 @@
+﻿@model PracaInz.ViewModels.StudentGradesVM
+
+@{
+    ViewBag.Title = "GradeList";
+}
+
+<h2>@Model.Student.FirstName  @Model.Student.LastName - @ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Dodaj Ocenę", "AddGrade", "Student", new { studentId = Model.Student.Id }, new { @class = "btn btn-primary" })
+
+</p>
+
+
+<table class="table table-bordered table-hover">
+    @foreach (var item in Model.Subject)
+    {
+        if (Model.Grades.Where(g => g.SubjectId == item.Id).Count() > 0)
+        {
+            if (Model.Grades.Where(g=>g.StudentId == Model.Student.Id).Any())
+            {
+                <tbody>
+                    <tr>
+                        <th>@item.Name</th>
+                        @foreach (var grade in Model.Grades.Where(g => g.SubjectId == item.Id))
+                        {
+                            if (grade.StudentId == Model.Student.Id)
+                            {
+                                <td>@grade.Value</td>
+                            }
+                        }
+                    </tr>
+                </tbody>
+            }
+        }
+    }
+</table>
+
+
+
+
