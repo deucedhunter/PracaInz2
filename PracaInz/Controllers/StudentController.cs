@@ -117,9 +117,9 @@ namespace PracaInz.Controllers
 
             var viewModel = new StudentGradesVM
             {
-                Subject = _context.Subjects.ToList(),
                 Student = student,
-                Grades = _context.Grades.ToList()
+                Grades = _context.Grades.Where(g => g.StudentId == id).ToList(),
+                Subject = _context.Subjects.ToList()
             };
 
             return View(viewModel);
