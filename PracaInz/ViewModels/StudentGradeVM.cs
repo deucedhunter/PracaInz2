@@ -14,7 +14,7 @@ namespace PracaInz.ViewModels
         public IEnumerable<Subject> Subject { get; set; }
 
 
-        public int? Id { get; set; }
+        public int Id { get; set; }
 
         [Range(1, 6)]
         public byte Value { get; set; }

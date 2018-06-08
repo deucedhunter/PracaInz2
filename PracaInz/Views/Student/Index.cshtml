@@ -1,9 +1,9 @@
 ﻿@model IEnumerable<PracaInz.Models.Student>
     @{
-        ViewBag.Title = "Index";
+        ViewBag.Title = "Lista Studentów";
     }
 
-    <h2>Index</h2>
+    <h2>@ViewBag.Title</h2>
     <p>
         @Html.ActionLink("Nowy uczeń", "New", "Student", null, new { @class = "btn btn-primary" })
     </p>

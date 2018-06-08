@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Plany Lekcji";
+}
+
+<h2>@ViewBag.Title;</h2>
+
+
+<table class="table table-hover">
+    @for (int i = 0; i < ViewBag.Collection.GetLength(0); i++)
+    {
+    <tr>
+        <td>
+            <a href="~/Data/@Html.Raw(@ViewBag.Collection[i, 0])" download="">
+                @Html.Raw(@ViewBag.Collection[i, 0]) -
+            </a>
+        </td>
+        <td>
+
+            @Html.Raw(@ViewBag.Collection[i, 1]) MB
+        </td>
+        <td>
+
+            @Html.Raw(@ViewBag.Collection[i, 2]) MB
+        </td>
+    </tr>
+    }
+</table>
+

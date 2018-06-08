@@ -1,44 +1,44 @@
-﻿@model PracaInz.ViewModels.SubjectTeacherVM
+﻿@model PracaInz.ViewModels.SubjectTeacherNoParamVM
 @{
-    ViewBag.Title = "formTeacher";
+    ViewBag.Title = "Formularz Nauczyciela";
 }
-<h2>formTeacher</h2>
+<h2>@ViewBag.Title</h2>
 @using (@Html.BeginForm("Save", "Teacher"))
 {
     @Html.ValidationSummary(true, "Proszę poprawidź zaznaczone pola!")
     <div class="form-group">
-        @Html.LabelFor(m => m.FirstName)
-        @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.FirstName)
+        @Html.LabelFor(m => m.Teacher.FirstName)
+        @Html.TextBoxFor(m => m.Teacher.FirstName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Teacher.FirstName)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.LastName)
-        @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.LastName)
+        @Html.LabelFor(m => m.Teacher.LastName)
+        @Html.TextBoxFor(m => m.Teacher.LastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Teacher.LastName)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Adress)
-        @Html.TextBoxFor(m => m.Adress, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Adress)
+        @Html.LabelFor(m => m.Teacher.Adress)
+        @Html.TextBoxFor(m => m.Teacher.Adress, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Teacher.Adress)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.Phone)
-        @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Phone)
+        @Html.LabelFor(m => m.Teacher.Phone)
+        @Html.TextBoxFor(m => m.Teacher.Phone, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Teacher.Phone)
     </div>
     <div class="form-group">
-    @Html.LabelFor(m => m.SubjectId)
-    @Html.DropDownListFor(m => m.SubjectId, new SelectList(Model.Subject, "Id", "Name"), "Wybierz Przedmiot", new { @class = "form-control" })
-    @Html.ValidationMessageFor(m => m.SubjectId)
+        @Html.LabelFor(m => m.Teacher.SubjectId)
+        @Html.DropDownListFor(m => m.Teacher.SubjectId, new SelectList(Model.Subject, "Id", "Name"), "Wybierz Przedmiot", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Teacher.SubjectId)
     </div>
     <div class="form-group">
-        @Html.LabelFor(m => m.ClassId)
-        @Html.DropDownListFor(m => m.ClassId, new SelectList(Model.Class, "Id", "Name"), " ", new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.ClassId)
+        @Html.LabelFor(m => m.Teacher.ClassId)
+        @Html.DropDownListFor(m => m.Teacher.ClassId, new SelectList(Model.Class, "Id", "Name"), new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Teacher.ClassId)
     </div>
 
 
-    @Html.HiddenFor(m => m.TeacherId)
+    @Html.HiddenFor(m => m.Teacher.TeacherId)
     @Html.AntiForgeryToken()
     <button class="btn btn-primary">Wyślij</button>
 }

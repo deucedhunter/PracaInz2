@@ -1,0 +1,19 @@
+﻿@model PracaInz.ViewModels.ClassSubjectsVM
+
+@{
+    ViewBag.Title = "ChooseSubject";
+}
+
+<h2>ChooseSubject - ClassId: @Model.Class.Id</h2>
+
+
+@using (Html.BeginForm("CheckPresenceClass", "Presence"))
+{
+    <div class="form-group">
+        @Html.LabelFor(s => s.Subject) <br />
+        @Html.DropDownListFor(s => s.Subject, new SelectList(Model.Subject, "Id", "Name"), "Wybierz Przedmiot", new { @class = "form -control" })
+
+        @Html.HiddenFor(c=>c.Class.Id)
+       <p><button class="btn btn-primary">Dalej</button></p>
+    </div>
+}

@@ -27,7 +27,7 @@ namespace PracaInz.Models
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Class> Classes { get; set; }
         public DbSet<Grade> Grades { get; set; }
-
+        public DbSet<Presence> Presence { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

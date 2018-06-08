@@ -199,67 +199,20 @@
     <Compile Include="Controllers\ClassController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PresenceController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\SubjectController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201805301224267_InitialModel.cs" />
-    <Compile Include="Migrations\201805301224267_InitialModel.Designer.cs">
-      <DependentUpon>201805301224267_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\201806060834414_InitialMigration.cs" />
+    <Compile Include="Migrations\201806060834414_InitialMigration.Designer.cs">
+      <DependentUpon>201806060834414_InitialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806010727097_PopulateClasses.cs" />
-    <Compile Include="Migrations\201806010727097_PopulateClasses.Designer.cs">
-      <DependentUpon>201806010727097_PopulateClasses.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806010745434_FixDB.cs" />
-    <Compile Include="Migrations\201806010745434_FixDB.Designer.cs">
-      <DependentUpon>201806010745434_FixDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806010746112_PopulateClasses1.cs" />
-    <Compile Include="Migrations\201806010746112_PopulateClasses1.Designer.cs">
-      <DependentUpon>201806010746112_PopulateClasses1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806010754496_ApplyAnnotations.cs" />
-    <Compile Include="Migrations\201806010754496_ApplyAnnotations.Designer.cs">
-      <DependentUpon>201806010754496_ApplyAnnotations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806011100554_PopulateSubjects.cs" />
-    <Compile Include="Migrations\201806011100554_PopulateSubjects.Designer.cs">
-      <DependentUpon>201806011100554_PopulateSubjects.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806011225295_ChangeIdInSubject.cs" />
-    <Compile Include="Migrations\201806011225295_ChangeIdInSubject.Designer.cs">
-      <DependentUpon>201806011225295_ChangeIdInSubject.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806011459491_AddTeachersAndGradesTablesToDB.cs" />
-    <Compile Include="Migrations\201806011459491_AddTeachersAndGradesTablesToDB.Designer.cs">
-      <DependentUpon>201806011459491_AddTeachersAndGradesTablesToDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806030824186_ChangeTeachersModel.cs" />
-    <Compile Include="Migrations\201806030824186_ChangeTeachersModel.Designer.cs">
-      <DependentUpon>201806030824186_ChangeTeachersModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806030825539_AddTeachersData.cs" />
-    <Compile Include="Migrations\201806030825539_AddTeachersData.Designer.cs">
-      <DependentUpon>201806030825539_AddTeachersData.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806041521325_VirtualAttAdd.cs" />
-    <Compile Include="Migrations\201806041521325_VirtualAttAdd.Designer.cs">
-      <DependentUpon>201806041521325_VirtualAttAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806041522564_AddClassTeacherConnect.cs" />
-    <Compile Include="Migrations\201806041522564_AddClassTeacherConnect.Designer.cs">
-      <DependentUpon>201806041522564_AddClassTeacherConnect.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806041619148_FixModelClassTeacher.cs" />
-    <Compile Include="Migrations\201806041619148_FixModelClassTeacher.Designer.cs">
-      <DependentUpon>201806041619148_FixModelClassTeacher.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806041626014_FixModelClassTeacher1.cs" />
-    <Compile Include="Migrations\201806041626014_FixModelClassTeacher1.Designer.cs">
-      <DependentUpon>201806041626014_FixModelClassTeacher1.cs</DependentUpon>
+    <Compile Include="Migrations\201806080649074_SubjectNameNotRequired.cs" />
+    <Compile Include="Migrations\201806080649074_SubjectNameNotRequired.Designer.cs">
+      <DependentUpon>201806080649074_SubjectNameNotRequired.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -267,18 +220,22 @@
     <Compile Include="Models\Grade.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Presence.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\Subject.cs" />
     <Compile Include="Models\Teacher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\BothMultiStudentClassVM.cs" />
+    <Compile Include="ViewModels\ClassSubjectsVM.cs" />
     <Compile Include="ViewModels\MultiStudentClassMV.cs" />
+    <Compile Include="ViewModels\PresenceClassStudentVM.cs" />
     <Compile Include="ViewModels\SingleSubjectTeacher.cs" />
     <Compile Include="ViewModels\StudentClassVM.cs" />
     <Compile Include="ViewModels\StudentGradesVM.cs" />
     <Compile Include="ViewModels\StudentGradeVM.cs" />
     <Compile Include="ViewModels\StudentSubjectVM.cs" />
+    <Compile Include="ViewModels\SubjectTeacherNoParamVM.cs" />
     <Compile Include="ViewModels\SubjectTeacherVM.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -354,9 +311,13 @@
     <Content Include="Views\Class\List.cshtml" />
     <Content Include="Views\Student\GradeList.cshtml" />
     <Content Include="Views\Student\AddGrade.cshtml" />
+    <Content Include="Views\Presence\CheckPresence.cshtml" />
+    <Content Include="Views\Presence\ChooseSubject.cshtml" />
+    <Content Include="Views\Home\Data.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -372,47 +333,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201805301224267_InitialModel.resx">
-      <DependentUpon>201805301224267_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806060834414_InitialMigration.resx">
+      <DependentUpon>201806060834414_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806010727097_PopulateClasses.resx">
-      <DependentUpon>201806010727097_PopulateClasses.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806010745434_FixDB.resx">
-      <DependentUpon>201806010745434_FixDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806010746112_PopulateClasses1.resx">
-      <DependentUpon>201806010746112_PopulateClasses1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806010754496_ApplyAnnotations.resx">
-      <DependentUpon>201806010754496_ApplyAnnotations.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806011100554_PopulateSubjects.resx">
-      <DependentUpon>201806011100554_PopulateSubjects.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806011225295_ChangeIdInSubject.resx">
-      <DependentUpon>201806011225295_ChangeIdInSubject.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806011459491_AddTeachersAndGradesTablesToDB.resx">
-      <DependentUpon>201806011459491_AddTeachersAndGradesTablesToDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806030824186_ChangeTeachersModel.resx">
-      <DependentUpon>201806030824186_ChangeTeachersModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806030825539_AddTeachersData.resx">
-      <DependentUpon>201806030825539_AddTeachersData.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806041521325_VirtualAttAdd.resx">
-      <DependentUpon>201806041521325_VirtualAttAdd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806041522564_AddClassTeacherConnect.resx">
-      <DependentUpon>201806041522564_AddClassTeacherConnect.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806041619148_FixModelClassTeacher.resx">
-      <DependentUpon>201806041619148_FixModelClassTeacher.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806041626014_FixModelClassTeacher1.resx">
-      <DependentUpon>201806041626014_FixModelClassTeacher1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806080649074_SubjectNameNotRequired.resx">
+      <DependentUpon>201806080649074_SubjectNameNotRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

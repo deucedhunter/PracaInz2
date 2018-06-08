@@ -1,0 +1,46 @@
+﻿@model PracaInz.ViewModels.PresenceClassStudentVM
+
+@{
+    ViewBag.Title = "CheckPresence";
+}
+
+<h2>@Model.Class.Name</h2>
+<p>@Model.Class.Description</p>
+
+
+
+
+@using (Html.BeginForm("CheckPresenceClass", "Present"))
+{
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th></th>
+                @foreach (var presence in Model.Presence)
+                {
+                    <th>@presence.Date.ToShortDateString()</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var student in Model.Student)
+            {
+            <tr>
+                <th>@student.FirstName @student.LastName</th>
+                @foreach (var presence in Model.Presence)
+                {
+                if (presence.StudentId == student.Id)
+                {
+                <td>@presence.Date.ToShortDateString() - @Html.CheckBox("Model.Presence.IsPresent", presence.IsPresent, new { @class = "text-center" })</td>
+                }
+                }
+            </tr>
+            }
+        </tbody>
+    </table>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+}
+
+
+

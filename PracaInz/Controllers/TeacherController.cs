@@ -60,11 +60,11 @@ namespace PracaInz.Controllers
 
         public ActionResult New()
         {
-            var viewModel = new SubjectTeacherVM
+            var viewModel = new SubjectTeacherNoParamVM
             {
                 Subject = _context.Subjects.ToList(),
-                Class = _context.Classes.ToList()
-
+                Class = _context.Classes.ToList(),
+                Teacher = new Teacher()
             };
             return View("formTeacher", viewModel);
         }
@@ -85,11 +85,11 @@ namespace PracaInz.Controllers
         }
         public ActionResult Edit(int id)
         {
-            var teachers = _context.Teachers.SingleOrDefault(t => t.TeacherId == id);
-
-            var viewModel = new SubjectTeacherVM(teachers)
+            var viewModel = new SubjectTeacherNoParamVM()
             {
-                Subject = _context.Subjects.ToList()
+                Teacher = _context.Teachers.SingleOrDefault(t => t.TeacherId == id),
+                Subject = _context.Subjects.ToList(),
+                Class = _context.Classes.ToList()
             };
 
             return View("formTeacher", viewModel);

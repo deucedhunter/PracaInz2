@@ -23,8 +23,9 @@
                 <td>@item.Name</td>
                 <td>@Model.Student.Where(s => s.ClassId == item.Id).Count().ToString()</td>
                 <td>
-                    @Html.ActionLink("Lista Uczniów", "List", "Class", new { id = item.Id }, new { @class = "btn-link" }) | 
-                    @Html.ActionLink("Usuń", "Delete", "Class", new { id = item.Id }, new { @class = "btn-link" })
+                    @Html.ActionLink("Lista Uczniów", "List", "Class", new { id = item.Id }, new { @class = "btn-link" }) |
+                    @Html.ActionLink("Usuń", "Delete", "Class", new { id = item.Id }, new { @class = "btn-link" }) |
+                    @Html.ActionLink("Obecność", "ChooseSubject", "Presence", new { classId = item.Id, subjectId = 1 },new{ @class = "btn-link"})
                 </td>
             </tr>
         </tbody>

@@ -1,8 +1,8 @@
 ﻿@model IEnumerable<PracaInz.Models.Subject>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Lista Przedmiotów";
 }
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
 <p>
     @Html.ActionLink("Nowy przedmiot", "New", "Subject", null, new { @class = "btn btn-primary" })
 </p>

@@ -13,13 +13,13 @@ namespace PracaInz.ViewModels
         public IEnumerable<Class> Class { get; set; }
 
 
-        public int TeacherId { get; set; }
+        public int? TeacherId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Adress { get; set; }
         public string Phone { get; set; }
-        public int SubjectId { get; set; }
-        public int ClassId { get; set; }
+        public int? SubjectId { get; set; }
+        public int? ClassId { get; set; }
 
 
         public SubjectTeacherVM()
